@@ -1,0 +1,534 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello World</title>
+		<script type="text/javascript">
+			//控制浏览器弹出一个框
+			// alert("Hello World!");
+			//让计算机在页面中输出一个内容
+			// document.write("你看我出来");
+			//向控制台输出一个内容
+			// console.log("出来");
+
+			//typeof 输出变量类型 所有数值都是Number类型：包括整数和浮点数
+			// var a = "123";
+			// var b = 123.23;
+			// console.log(typeof a);
+			// console.log(typeof b);
+
+			//js中可以表示数字的最大/小值
+			// console.log(Number.MAX_VALUE,Number.MIN_VALUE);
+			//Infinity 正无穷 -Infinity 负无穷
+			// console.log(Number.MAX_VALUE * Number.MAX_VALUE);
+
+			//typeof 检查 Infinity NaN 都返回 number
+
+			//用JS进行整数相加，结果基本精确
+			// var a = 123456 + 345667;
+			// console.log(a);
+			//用JS进行浮点数相加，结果不精准
+			//尽量不要使用JS进行精确度高的运算
+			// var c = 0.1 + 0.2;
+			// console.log(c);
+			
+
+			// var a = true;
+			// a = parseFloat(a);
+		  // var b = "123ju4345";
+			// b= parseInt(b);
+			// console.log(typeof a);
+			// console.log(a);
+			// console.log(typeof b);
+			// console.log(b);
+
+			// a = NaN;
+			
+		  
+			// console.log(0 == null);
+			// var a = 20;
+			// var b =40;
+			// var max = a > b ? a : b;
+			// console.log("max= "+max);
+
+			// var s = prompt("请输入：");
+			// alert(s);
+			
+			// while(true){
+			// 	var score = prompt("请输入老罗的成绩: ");
+			// 	if(score >= 0 || score <= 100 ){
+			// 		break;
+			// 	}
+			// 	alert("请输入有效的分数！");
+
+			// }
+			
+			// if(score > 100 || score < 0 || isNaN(score)){
+			// 	alert("拉出去毙了");
+			// }else{
+			// 	if(score == 100){
+			// 		alert("奖励宝马一台");
+			// 	}else if(score > 80){
+			// 		alert("奖励手机一台");
+			// 	}else if(score > 60){
+			// 		alert("奖励书一本");
+			// 	}else{
+			// 		alert("棍子一根");
+			// 	}
+			// }
+			
+			//3个数排序
+			// var num1 = +prompt("请输入第一个数: ");
+			// var num2 = +prompt("请输入第二个数: ");
+			// var num3 = +prompt("请输入第三个数: ");
+			
+			// if(num1 < num2 && num1 < num3){
+			// 	//num1最小
+			// 	if(num2 < num3){
+			// 		// num1 num2 num3
+			// 		alert(num1 +" " + num2 +" " + num3);
+			// 	}else{
+			// 		//num1 num3 num2
+			// 		alert(num1 +" " + num3 + " " + num2);
+			// 	}
+			// }else if(num2 < num1 && num2 < num3){
+			// 	if(num1 < num3){
+			// 		alert(num2 +" " + num1 + " " + num3);
+			// 	}else{
+			// 		alert(num2 +" " + num3 + " " + num1);
+			// 	}
+			// }else{
+			// 	if(num1 < num2){
+			// 		alert(num3 +" " + num1 + " " + num2);
+			// 	}else{
+			// 		alert(num3 +" " + num2 + " " + num1);
+			// 	}
+			// }
+
+			// var score = 89;
+			// switch(true){
+			// 	case score >= 60: 
+			// 		console.log("合格");
+			// 		break;
+			// 	default: 
+			// 	console.log("不合格 ")
+			// }
+			// switch(parseInt(score/10)){
+			// 	case 6: 
+			// 	case 7:
+			// 	case 8:
+			// 	case 9:
+			// 	case 10:
+			// 		console.log("合格");
+			// 		break;
+			// 	default: 
+			// 	console.log("不合格 ")
+			// }
+
+
+
+			// var i = 1000;
+			// var count = 0;
+			// while(i < 5000){
+			// 	i *= 1.05; 
+			// 	count++;
+			// }
+			// console.log(i);
+			// console.log(count);
+			// do{
+			// 	document.write(i++ +"<br />" );
+			// }while(i < 10)
+			// var count = 0;
+			// var sum = 0;
+			// for(i = 1; i < 100; i++){
+			// 	if(i % 7 == 0){
+			// 		sum = sum + i;
+			// 		count++;
+			// 	}
+			// }
+			// console.log(count);
+			// console.log(sum);
+
+      
+      //水仙花数
+			// for(i = 100;i < 1000; i++){
+			// 	var bai = parseInt(i/100);
+			// 	var shi = parseInt((i - bai *100)/10);
+			// 	var ge = i % 10;
+			// 	if(bai * bai * bai + shi * shi * shi + ge * ge * ge == i){
+			// 		console.log(i);
+			// 	}
+			// }
+			//判断输入的数是不是质数
+			// var num = prompt("请输入一个大于1的数:");
+			// if(num <= 1){
+			// 	alert("该数不合法")
+			// }else{
+			// 	var flag = true;
+			// 	for(var i = 2;i < num; i++){
+			// 		if(num % i == 0){
+			// 			flag = false;	
+			// 		}
+			// 	}
+			// 	if(flag){
+			// 		alert(num +"是质数");
+			// 	}else{
+			// 		alert(num +"不是质数");
+			// 	}
+			// }
+			//判断1~100之间的质数
+			// console.time("test");
+			// for(var i = 2; i <= 100; i++){
+			// 	var flag = true;
+			// 	for(var j = 2; j <= Math.sqrt(i); j++){
+			// 		if(i % j == 0){
+			// 			flag = false;
+			// 			break;
+			// 		}
+			// 	}
+			// 	if(flag){
+			// 		console.log(i);
+			// 	}
+			// }
+			// console.timeEnd("test");
+
+			//倒三角
+			// for(var i = 0;i < 5; i++){
+			// 	for(var j=0; j<5-i; j++){
+			// 		document.write("* &nbsp;&nbsp;&nbsp;");
+			// 	}
+			// 	document.write("<br/>");
+			// }
+
+				//九九乘法表
+			// for(var i = 1; i <= 9; i++){
+			// 	for(var j = 1; j <= i; j++){
+			// 		document.write("<span>"+j+"*"+i +"="+i*j+"</span>");
+			// 	}
+			// 	document.write("<br/>");
+			// }
+
+			//创建对象
+			// var obj = new Object();
+			// //增加属性
+			// obj.name= "pp";
+			// obj.age= 12;
+			// obj.sex= "女";
+			// //修改属性值
+			// obj.name= "jj";
+			// //删除对象的属性
+			// delete obj.name;
+			// //查询
+			
+			// obj["123"] = "ll";
+			// console.log(obj["123"]);
+			// obj["nihao"] = "你好";
+			// var n ="nihao";
+			// console.log(obj[n]);
+			// console.log("niha" in obj);
+
+			// var a = 123;
+			// a++;
+			// var b = a;
+			// console.log(a);
+			// console.log(b);
+
+			// var obj = {
+			// 	name: "ll",
+			// 	age: 13,
+			// 	test: {name: "oo"}
+			// }
+			// console.log(obj.age);
+
+			// function sum(a,b,c){
+			// 	return a+b+c;
+
+			// }
+			// var d = sum(1,2,3,);
+			// console.log(d);
+
+			// function hh(o){
+			// 	console.log("我是"+ o.name+",我今年"+o.age+"岁了，我住在"+o.address);
+			// }
+			// var obj = {
+			// 	name: "孙悟空",
+			// 	address: "花果山",
+			// 	age: 20
+			// }
+			// for(var n in obj){
+			// 	console.log("属性名:" + n);
+			// 	console.log("属性值:"+ obj[n]);
+			// }
+			// hh(obj);
+			// function fun(a){
+			// 	a(obj);
+			// }
+			// fun(hh);
+			//返回值
+			// function fun1(){
+			// 	function fun2(){
+			// 		alert("我是fun2");
+			// 	}
+			// 	return fun2;
+			// }
+			// var a = fun1();
+			// a();
+
+		//  (function(a){
+    //    console.log(a)
+		//  })(1);
+
+		// var obj = new Object();
+		// obj.ss = function (){
+		// 	console.log("dd");
+		// }
+		// obj.ss();
+
+		// var a =123;
+		// console.log(window.a);
+		// function fun() {
+		// 	console.log("wo");
+		// }
+		// window.fun();
+		// window.alert("ee");
+		// console.log(d);
+		//  d = 123;
+		//  var a = "123"
+		//  var b =234;
+		//  console.log(a < b);
+		//  console.log(true == "1");
+		//  console.log(null == 0);
+		// alert(d);
+		// var a = 5;
+		// var b = "hello";
+		// var c = true;
+		// function fun1(){
+		// 	alert("hello");
+		// }
+		// var d = 35;
+
+		// var name = "全局";
+
+		// function fun(){
+		// 	console.log(this.name);
+		// }
+		// var obj = {
+		// 	name: "孙悟空",
+		// 	sayName: fun
+		// };
+
+		// var obj2 = {
+		// 	name: "沙和尚",
+		// 	sayName: fun
+		// };
+
+		// obj.sayName();//孙悟空
+		// obj2.sayName();//沙和尚
+
+		function Person(name,age,gender){
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+		}
+    // Person.prototype.toString = function(){
+		// 	return "Person[name="+ this.name+",age="+this.age+"]";
+		// }
+
+		// var per1 = new Person("孙悟空",18,"男");
+		// var per2 = new Person("胡歌",17,"男");
+		// var per3 = new Person("张杰",5,"男");
+		// var per4 = new Person("奎湖",19,"男");
+		// var per5 = new Person("李雷",13,"男");
+
+		// var perArr = [per1,per2,per3,per4,per5]
+		// console.log(perArr);
+
+		// function getAdult(arr){
+		// 	var newArr = [];
+		// 	for(var i = 0; i < arr.length; i++){
+		// 		if(arr[i].age <= 18){
+		// 			newArr.push(arr[i]);
+		// 		}
+		// 	}
+		// 	return newArr;
+		// }
+		// var result = getAdult(perArr);
+		// console.log(result);
+		
+    // Person.prototype.sayHello = function(){
+		// 	alert(this.name);
+		// }
+		// Person.prototype.a = 123;
+		// per.ad= 18;
+		// per.sayHello();
+		// console.log(per2.a);
+		// console.log(per3.a);
+	// 	per.toString = function(){
+	// 		return "我是狗子";
+	// 	}
+	//  per.toString()
+	// 	console.log(per);
+		// console.log(per.hasOwnProperty("ad"));
+		// console.log(per.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+
+
+		// console.log(per instanceof Person);
+		
+		// var arr = new Array();
+		// console.log(typeof arr);
+		// var arr = [1,2,3,4];
+		// var result = arr.push(5);
+		// var result = arr.shift();
+		// console.log(arr);
+		// console.log(result);
+		// for(i = 0; i < arr.length; i++){
+		// 	console.log(arr[i]);
+		// }
+
+		// var arr = ["星期一","星期二","星期三","星期四","星期五"];
+		// arr.forEach(function(value,index,obj){
+		// 	console.log(value);
+		// 	console.log(index);
+		// 	console.log(obj);
+
+
+		// })
+	  // var result = arr.splice(1,1,"丽丽");
+		// console.log(arr);
+		// console.log(result);
+		//数组去重
+		// var arr = [1,2,3,2,2,4,4,4,4,5,6,7];
+		// for(var i = 0; i < arr.length; i++){
+		// 	for(var j = i+1; j< arr.length; j++){
+		// 		if(arr[i] == arr[j]){
+		// 			arr.splice(j,1);
+		// 			j--;
+		// 		}
+		// 	}
+		// }
+		// console.log(arr);
+
+		// var arr1 = [1,2,11,7,5];
+		// var arr2 = [3,4];
+		// var result = arr1.join("/");
+		// console.log(result);
+		// arr1.sort();
+		// console.log(arr1);
+
+	// 	var arr =[4,6,1,2,3,2,6];
+	// 	arr.sort(function(a,b){
+	// 		// if(a>b){
+	// 		// 	return 1;
+	// 		// }else if(a<b){
+	// 		// 	return -1;
+	// 		// }else{
+	// 		// 	return 0;
+	// 		// }
+	// 		return b-a;
+	// 	})
+  // console.log(arr);
+
+	// function fun (a,b){
+	// 	alert(this.name);
+	// 	console.log("a= "+a);
+	// 	console.log("b= "+b);
+
+	// }
+	// var obj1 ={
+	// 	name: "我是obj1",
+	// 	sayName: function(){
+	// 		alert(this.name);
+	// 	}
+	// };
+	// var obj2 ={name: "我是obj2"};
+	// fun.apply(obj1,[2,3]);
+  // function fun(){
+	// 	console.log(arguments.length);
+  //   console.log(arguments.callee);
+	// }
+	// fun(1,2);
+	// var d = new Date("1/1/1970 08:00:00");
+	// console.log(d);
+	// console.log(d.getDate())
+	// console.log(d.getDay());
+	// console.log(d.getMonth());
+	// console.log(d.getFullYear());
+	// console.log(d.getTime());
+	// var d = new Date("1/1/1970 08:00:00");
+	// var d1 = d.getTime();
+	// console.log(d1);//0 格林时间和北京时间有8小时时差
+
+	// var start = Date.now();
+	// console.time("test");
+	// for(var i = 0; i < 100; i++){
+	// 	console.log(i);
+	// }
+	// // var end = Date.now();
+	// console.timeEnd("test");
+	// // console.log(end-start);
+	// console.log(Math.random());
+	// for(var i = 0; i<100;i++){
+	// 	console.log(Math.ceil(Math.random()*10));
+	// }
+	// console.log(Math.sqrt(2));
+	// var a = 123;
+	// a = a.toString();
+	// console.log(typeof a);
+	// var str = "abc,bcd,cde,def";
+	// console.log(str.length);
+	// console.log(str[0]);
+	// var result = str.split(",");
+	// console.log(result[0]);
+	// var reg = new RegExp("a","i");
+	// var str = "Abc";
+	// var result = reg.test(str);
+	// console.log(result);
+
+  // var reg = /[^ab]/i;
+	// console.log(reg.test("a"));
+	// var str = "1a2a3c4d5e6fA";
+	// var result = str.replace(/[a-z]/gi,"");
+	// console.log(result);
+	// var reg = /^1[3-9][0-9]{9}$/;
+	// console.log(reg.test("13345678936"));
+	// var reg = /\\/;
+	// console.log(reg.test("gd\\"));//true
+	// console.log("gd\\");//gd\
+
+	// var reg = new RegExp("\\\\");
+	// console.log(reg.test("kk\\"));
+	// console.log(reg);
+	// var reg = /\bchild/;
+	// console.log(reg.test("child ren"));
+	// var str = prompt("请输入用户名： ");
+	// var str = "   he llo       ";
+	// console.log(str);
+	// str.replace(/^\s*|\s*$/g,"");
+	// console.log(str);
+
+	// var reg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
+	// console.log(reg.test("176548.lll@qq"));
+	var reg = /^\d+$/;
+	console.log(reg.test("kkj"));
+
+
+
+
+
+
+
+
+
+		</script>
+		<!-- <style>
+			span{
+				display:inline-block;
+				width:80px;
+			}
+		</style> -->
+	</head>
+	<body>
+		<!-- <h2 style="font-size: 100px">&#9760;</h2> -->
+
+	</body>
+	</body>
+</html>

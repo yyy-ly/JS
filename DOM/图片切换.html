@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			width: 500px;
+			margin: 50px auto;
+			background-color: pink;
+			padding: 10px;
+			text-align: center;
+		}
+		img{
+			width: 500px;
+			height: 500px;
+		}    
+	</style>
+	<script>
+		window.onload = function(){
+			var btn1 = document.getElementById("pre");
+			var btn2 = document.getElementById("next");
+			var img = document.getElementsByTagName("img")[0];
+
+		  var imgArr = ["img/1.jpeg","img/2.jpeg","img/3.jpeg","img/4.jpeg","img/5.jpeg"];
+			var index = 0;
+			
+			var info = document.getElementById("info");
+
+			btn1.onclick = function(){
+				index--;
+				if(index < 0){
+				  index = imgArr.length-1;
+				}
+				img.src = imgArr[index];
+				info.innerHTML = "一共"+imgArr.length+"张图片"+",当前是第"+(index+1)+"张";	
+			}
+
+			btn2.onclick = function(){
+				index++;
+				if(index>imgArr.length-1){
+					index = 0;
+				}
+				img.src = imgArr[index];
+				info.innerHTML = "一共"+imgArr.length+"张图片"+",当前是第"+(index+1)+"张";	
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<p id="info"></p>
+		<img src="img/1.jpeg" alt="第一张">
+		<button id="pre">上一张</button>
+		<button id="next">下一张</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		var ua = navigator.userAgent;
+		if(/firefox/i.test(ua)){
+			alert("我是火狐");
+		}else if(/chrome/i.test(ua)){
+			alert("我是谷歌");
+		}else if("AvtiveXObject" in window){
+			alert("我是IE");
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

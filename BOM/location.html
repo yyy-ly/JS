@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){
+				/* History - 对象中封装了地址栏的信息 */
+				// alert(location);
+				// location = "http://www.baidu.com";
+				// location.assign("http://www.baidu.com");
+				// location.reload(true);
+				location.replace("http://www.baidu.com");
+		  
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Histoey</h1>
+	<button id="btn">点我一下</button>
+	<input id="text" />
+	<a href="Navigator.html">去Navigator</a>
+</body>
+</html>

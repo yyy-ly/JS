@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+
+		// alert(history.length);
+		window.onload = function(){
+
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){
+				/* History - 对象用来操作浏览器向前向后翻页 */
+		    /* length 可以获取当次访问的链接数量 */
+		    /* back()  可以回退到上一个页面 */
+				/* forward()  可以跳转到下一个页面 */
+				/* go()  可以跳转到指定页面 */
+
+
+			  // history.back();
+				// history.forward();
+				// history.go(-2);
+				
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Histoey</h1>
+	<button id="btn">点我一下</button>
+	<a href="Navigator.html">去Navigator</a>
+</body>
+</html>

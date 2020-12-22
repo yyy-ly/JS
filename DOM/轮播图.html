@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		img{
+			width: 400px;
+			height: 350px;
+		}
+		#outer{
+			width: 420px;
+			height: 350px;
+			margin: 50px auto;
+			padding: 10px 0;
+			background-color: yellowgreen;
+			position:relative;
+			overflow: hidden;
+		}
+		#imgList{
+			list-style: none;
+			/* width: 2100px; */
+			position: absolute;
+			/* 每向左移动420px,就会移动到下一张图片 */
+			/* left: -420px; */
+		}
+		#imgList li {
+			float: left;
+			margin: 0 10px;
+		}
+		#navDiv{
+			position: absolute;
+			/* 设置位置 */
+			bottom: 15px;
+			/* 设置left值
+			      outer 宽420
+						navDiv 宽 10*5+5*2*5
+						left = (outer-navDiv)/2
+			*/
+			/* left: 160px; */
+
+		}
+		#navDiv a {
+			float: left;
+			width: 10px;
+			height: 10px;
+			margin: 0 5px;
+			background-color:red;
+			/* 设置透明 */
+			opacity: 0.5;
+			/* 兼容IE8透明 */
+			filter: alpha(opacity=50);
+		}
+		#navDiv a:hover{
+			background-color: black;
+		}
+	</style>
+	<script src="tools.js"></script>
+	<script>
+		window.onload = function(){
+			var imgList = document.getElementById("imgList");
+			var imgArr = document.getElementsByTagName("img");
+			//设置imgList的宽度
+			imgList.style.width = 420 * imgArr.length + "px";
+			//设置导航居中
+			//获取navDiv
+			var navDiv = document.getElementById("navDiv");
+			//获取outer
+			var outer = document.getElementById("outer");
+			navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth)/2 + "px";
+			//设置显示图片索引
+			var index = 0;
+			//获取所有的a
+			var allA = document.getElementsByTagName("a");
+			allA[index].style.backgroundColor = "black";
+			/* 点击超链接切换图片
+						点击第一个超链接 显示第一张图片 
+						点击第二个超链接 显示第二张图片
+						。。。
+			*/
+			//为所有的超链接都绑定单击响应函数
+			for(var i = 0; i < allA.length; i++){
+				//为每一个超链接都添加一个num属性
+				allA[i].num = i;
+				//为超链接绑定单击响应函数
+				allA[i].onclick = function(){
+					//关闭自动切换定时器
+					clearInterval(timer);
+					//获取点击超链接的索引，将其设置为index
+					index = this.num;
+
+					//切换图片
+					/* 第一张 0 0
+						 第二张 1 -420
+						 第三张 2 -840
+					 */
+					// imgList.style.left = -420*index + "px";
+					//设置选中的a
+					setA();
+					//使用move（）函数来切换图片
+					move(imgList,"left",-420*index,20,function(){
+						//动画执行完毕，开启自动切换
+						autoChange();
+					})
+				};
+			};
+
+			//开启自动切换图片
+			autoChange();
+			
+			//创建一个方法，来设置选中的a
+			function setA(){
+				//判断当前索引是否是第一张图片
+				if(index >= imgArr.length-1){
+					index = 0;
+					//此时显示的是最后一张图片，而最后一张图片和第一张一摸一样
+          //通过css将最后一张切换成第一张
+			    imgList.style.left = 0;
+				}
+
+				//遍历所有的a，并将他们的背景设置为红色
+				for(var i = 0; i < allA.length; i++){
+					allA[i].style.backgroundColor = "";
+				}
+				//将选中的a 背景设置为黑色
+				allA[index].style.backgroundColor = "black";
+			};
+			var timer;
+			//创建一个函数 ，来开启自动切换图片
+			function autoChange(){
+				
+				timer = setInterval(function(){
+					//使索引自增
+					index++;
+					if(index >= imgArr.length){
+						index = 0;
+					}
+					//执行动画，切换图片
+					move(imgList,"left",-420*index,20,function(){
+						//修改导航按钮
+						setA();
+					});
+				},1000);
+			}
+	}
+	</script>
+</head>
+<body>
+	<div id="outer">
+		<ul id="imgList">
+			<li><img src="img/1.jpeg"></li>
+			<li><img src="img/2.jpeg"></li>
+			<li><img src="img/3.jpeg"></li>
+			<li><img src="img/4.jpeg"></li>
+			<li><img src="img/5.jpeg"></li>
+			<li><img src="img/1.jpeg"></li>
+		</ul>
+		<div id="navDiv">
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+		</div>
+	</div>
+</body>
+</html>

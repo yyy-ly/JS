@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			// var ul = document.getElementsByTagName("ul")[0];
+			// alert(ul.innerText);
+		  // var li1 = ul.children[2];
+			// var li2 = li1.nextElementSibling;
+			// alert(li2.innerHTML);
+		// 	var all = document.all;
+
+		// 	for(var i = 0; i < all.length;i++){
+		// 		console.log(all[i]);
+		// 	}
+		// }
+		// var lis = document.querySelectorAll(".ul #li");
+		// console.log(lis.length);
+		// }
+		// var li = document.createElement("li");
+		// 	var text = document.createTextNode("北京");
+		// 	li.appendChild(text);
+			var ul = document.getElementById("ul");
+		// 	ul.appendChild(li);
+		var btn = document.getElementsByTagName("button")[0];
+		btn.onclick = function(){
+			var li = document.createElement("li");
+			li.innerHTML = "北极";
+			ul.appendChild(li);
+
+			// var li2 = document.createElement("li");
+			// var text2 = document.createTextNode("广州");
+			// li2.appendChild(text2);
+			// ul.insertBefore(li2,li);
+			// ul.replaceChild(li2,li);
+			// li.parentNode.removeChild(li);
+		}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<ul id="ul">
+			<li class="li">节点1</li>
+			<li class="li">节点2</li>
+			<li class="li">节点3</li>
+			<li class="li">节点4</li>
+		</ul>
+	</div>
+	<button>按钮</button>
+
+</body>
+</html>

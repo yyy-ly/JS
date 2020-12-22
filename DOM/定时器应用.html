@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			position: absolute;
+			left: 0;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			position: absolute;
+			left: 0;
+			top:200px;
+		}
+	</style>
+	<script src="tools.js"></script>
+	<script>
+		window.onload = function(){
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var btn3 = document.getElementById("btn3");
+			var btn4 = document.getElementById("btn4");
+			
+			//点击按钮以后，使box1向右移动
+		 	btn1.onclick = function(){
+				 move(box1,"left",800,20);
+			};
+
+			//点击按钮以后，使box1向左移动
+			btn2.onclick = function(){
+				move(box1,"left",0,10);
+			};
+      //点击按钮以后，使box2向右移动
+			btn3.onclick = function(){
+			move(box2,"left",800,10);
+		};
+			//测试按钮
+			btn4.onclick = function(){
+				// move(box2,"height",800,10);
+				// move(box2,"width",800,10);
+        // move(box2,"top",800,10);
+				move(box2,"width",800,10,function(){
+					move(box2,"height",800,10,function(){
+			      move(box2,"top",10,10,function(){
+					    move(box2,"width",100,10,function(){
+							});
+						});
+					});
+				});	
+			}
+	}
+	</script>
+</head>
+<body>
+	<button id="btn1">点击按钮以后box1向右移动</button>
+	<button id="btn2">点击按钮以后box1向左移动</button>
+	<button id="btn3">点击按钮以后box2向右移动</button>
+	<button id="btn4">测试按钮</button>
+	<br/><br/>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div style="width:0;height:2000px;border-left:1px solid black;position:absolute;left:800px;top:0;"></div>
+</body>
+</html>

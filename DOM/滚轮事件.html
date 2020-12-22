@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			/* 当滚轮往下滚时，box1变长
+			   当滚轮往上滚时，box1变短
+			 */
+			var box1 = document.getElementById("box1");
+
+			//为box1绑定一个滚轮滚动事件
+
+			/* onmousewheel鼠标滚轮滚动事件，已废弃，用onwheel
+			但是火狐不支持该属性，在火狐中使用DOMMouseScroll 
+			注意： 该函数需要使用 addEventListenner（）函数来绑定
+			20年 谷歌 火狐 用onwheel IE用 onmousewheel
+			*/
+
+			box1.onwheel = function(){
+		
+			  event = event || window.event;
+				//判断滚轮滚动的方向 
+				//event.wheelDelta 可以获取滚轮滚动的方向 IE chrome 支持
+				//event.wheelDelta 值不看大小，只看正负
+				//>0 向上滚 <0 向下滚
+
+				//event.wheelDelta 火狐不支持 
+				//在火狐中使用 event.detail 来获取滚动的方向
+				//向上滚-3 向下滚3
+				
+				alert(event.wheelDelta); 
+				//判断鼠标滚轮滚动方向
+				if(event.wheelDelta > 0 || event.detail < 0){
+					//向上滚，box1变短
+					box1.style.height = box1.clientHeight - 50 + "px";
+				}else{
+					//向下滚，box1变长
+					box1.style.height = box1.clientHeight + 50 + "px";
+				}
+				/* 使用 addEventListener（）方法绑定响应函数，取消默认行为不能使用return false
+				需要使用event来取消默认行为
+				但是IE8不支持event.preventDefault()，如果直接调用会报错 判断如果有就使用，没有就不用
+				*/
+				event.preventDefault && event.preventDefault();
+
+				/* 当滚轮滚动时，如果浏览器有滚动条，滚动条会随之滚动
+				这是浏览器的默认行为，如果不希望发生，可以取消 
+				*/
+				return false;
+			}
+
+			//为火狐绑定滚轮事件
+			bind(box1,"DOMMouseScroll",box1.onmousewhell);
+		}
+
+			function bind(obj,eventStr,callback){
+				if(obj.addEventListener){
+					//正常浏览器
+					obj.addEventListener(eventStr,callback,false);
+				}else{
+
+					//this是谁 由谁调用方法决定
+					//callback.call(obj)
+					//IE8及以下
+					obj.attachEvent("on"+eventStr,function(){
+						//在匿名函数中调用回调函数 this指向当前obj
+						callback.call(obj);
+					})
+				}
+			}
+	</script>
+</head>
+<body style= "height: 5000px;">
+	<div id="box1"></div>
+</body>
+</html>
